@@ -29,6 +29,12 @@ const people = [
 // Array.prototype.filter()
 // 1. Filter the list of inventors for those who were born in the 1500's and return the filtered array
 export function myfilter() {
+	var Inventors = inventors.filter((person)=>{
+		return person.year < 1600;
+		
+	})
+
+	return Inventors;
 
 }
 
@@ -37,12 +43,33 @@ export function myfilter() {
 // Ex: For the first inventor the full name will be 'Albert Einstein'
 export function map() {
 
+	var Names = inventors.map(fullname);
+	function fullname(name){
+		return[name.first,name.last].join(" ");
+	}
+	return Names;
+
 }
 
 
 // Array.prototype.sort()
 // 3. Sort the inventors by birthdate, oldest to youngest and return the sorted array
 export function sort() {
+	var Sorted = inventors.sort(function(obj1,obj2){
+		return Compare(obj1[year],obj2[year]);
+	});
+
+	return Sorted;
+
+	function Compare(a,b){
+		if(a < b){
+			return 1
+		}
+		else{
+			return -1;
+		}
+	}
+	
 
 }
 
