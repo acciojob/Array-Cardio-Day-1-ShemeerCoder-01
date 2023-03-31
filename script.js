@@ -63,10 +63,10 @@ export function sort() {
 
 	function Compare(a,b){
 		if(a < b){
-			return 1
+			return -1;
 		}
 		else{
-			return -1;
+			return 1;
 		}
 	}
 	
